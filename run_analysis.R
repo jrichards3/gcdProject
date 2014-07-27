@@ -69,7 +69,7 @@ extractMeanAndStd <- function(dataSet, directory) {
 }
 
 
-meltDataAndWriteTidySet <- function(dataSet, path_to_tidyset_file) {
+meltDataAndWriteTidySet <- function(dataSet, pathToTidysetFile) {
     # let's melt the data
     require(reshape2)
     meltedData <- melt(dataSet, id=c("Subject","Activity_Id","Activity"))
@@ -87,7 +87,7 @@ meltDataAndWriteTidySet <- function(dataSet, path_to_tidyset_file) {
     colnames(tidyData) <- colNamesVector
     
     # write the output into a file
-    write.table(tidyData, file=path_to_tidyset_file, sep="\t", row.names=FALSE)
+    write.table(tidyData, file=pathToTidysetFile, sep="\t", row.names=FALSE)
 }
 
 mergedData <- mergeData("UCI HAR Dataset")
